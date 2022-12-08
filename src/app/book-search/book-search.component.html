@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="bg-image"
+    style="background-image: url('https://cdna.artstation.com/p/assets/images/images/023/804/120/large/oliwia-kozlowska-sen-poprawion.jpg?1580391405'); height: 100vh; width: 100vw;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12">
+                <div class="row g-3 mt-4">
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                        <h1 class="text-light">Search Book</h1>
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-lg-12 col-xl-12 col-xxl-12">
+                        <label for="" class="form-label text-light">Book Title</label>
+                        <input type="text" class="form-control" name="title" [(ngModel)]="title">
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                        <button class="btn btn-success" (click)="readValues()">Search Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

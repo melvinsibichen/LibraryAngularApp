@@ -1,0 +1,30 @@
+<div class="bg-image" style="background-image: url('https://wallpaperaccess.com/full/2862101.jpg'); height: 100vh; width: 100vw;">
+    <div class="container">
+        <div class="row">
+            <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                <div class="row g-3 mt-3">
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                        <h1 class="text-light">Administrator Login</h1>
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                        <label for="" class="form-label text-light">Username</label>
+                        <input type="text" class="form-control" name="username" [(ngModel)]="username">
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                        <label for="" class="form-label text-light">Password</label>
+                        <input type="password" name="" id="" class="form-control" name="password" [(ngModel)]="password">
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                        <button class="btn btn-success" (click)="readValues()">Login</button>
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                        <a class="text-light btn btn-primary" routerLink="/userregistration">Go to User Registeration</a>
+                    </div>
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                        <a class="text-light btn btn-primary" routerLink="/userlogin">Go to User Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

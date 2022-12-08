@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="bg-image"
+    style="background-image: url('https://b-static.besthdwallpaper.com/stacking-of-old-hardcover-books-with-red-yellow-covers-wallpaper-1920x1080-94516_48.jpg');  height: 100vh; width: 100vw;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12">
+                <div class="row g-3 mt-4">
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                        <h1 class="text-light">Issue Books</h1>
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label text-light">Name</label>
+                        <input type="text" class="form-control" name="name" [(ngModel)]="name">
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label text-light">Book Title</label>
+                        <input type="text" class="form-control" name="title" [(ngModel)]="title">
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label text-light">Date of Issue</label>
+                        <input type="date" class="form-control" name="date" [(ngModel)]="date">
+                    </div>
+                    <div class="col col-12 col-sm-6 col-md-6 col-lg-6 col-lg-6 col-xl-6 col-xxl-6">
+                        <label for="" class="form-label text-light">Membership number</label>
+                        <input type="text" class="form-control" name="membership" [(ngModel)]="membership">
+                    </div>
+                    
+                    <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-lg-12 col-xl-12 col-xxl-12 text-center">
+                        <button class="btn btn-success" (click)="readValues()">Issue Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
