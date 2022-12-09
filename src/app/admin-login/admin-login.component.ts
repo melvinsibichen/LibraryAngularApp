@@ -19,7 +19,7 @@ export class AdminLoginComponent {
     }
     console.log(values)
 
-    if (this.username=="jobin" && this.password=="12345") {
+    if (this.username=="melvin" && this.password=="12345") {
       this.route.navigate(["/view"])
     } else {
       alert("Invalid Login Credentials")

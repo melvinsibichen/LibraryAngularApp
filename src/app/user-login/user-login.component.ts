@@ -12,7 +12,7 @@ export class UserLoginComponent {
   password=""
 
   readValues = ()=>{
-    if(this.username=="jobin"&&this.password=="12345"){
+    if(this.username=="melvin"&&this.password=="12345"){
       this.route.navigate(["/view"])
     }else{
       alert("Invalid credentials")
