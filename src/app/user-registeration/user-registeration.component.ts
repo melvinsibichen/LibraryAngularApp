@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-user-registeration',
@@ -6,11 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-registeration.component.css']
 })
 export class UserRegisterationComponent {
+  constructor(private api:ApiService, private route:Router){}
   name = ""
-  aadharNumber = ""
   address = ""
-  pin = ""
-  dob = ""
   email = ""
   phone = ""
   username = ""
@@ -20,17 +20,21 @@ export class UserRegisterationComponent {
   readValues = () => {
     let values:any = {
       "name": this.name,
-      "aadharNumber": this.aadharNumber,
       "address": this.address,
-      "pin": this.pin,
-      "dob": this.dob,
       "email": this.email,
       "phone": this.phone,
       "username": this.username,
       "password": this.password,
-      "confirmPassword": this.confirmPassword
-
     }
-    console.log(values)
+    
+    if(this.password == this.confirmPassword){
+      this.api.userSignup(values).subscribe(
+        (response:any)=>{
+          this.route.navigate(["/userlogin"])
+        }
+      )
+    }else{
+      alert("password mismatch")
+    }
   }
 }

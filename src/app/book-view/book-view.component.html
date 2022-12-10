@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12 mb-3">
+                <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12 mb-5">
                     <div class="row">
                         <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12 mb-3">
                             <h2>Categories you like</h2>
@@ -95,28 +95,59 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12 mb-3">
+                <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12 mb-3 mt-5">
                     <div class="row g-3">
-                        <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12 mb-3">
+                        <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12 mb-3 d-flex justify-content-between">
                             <h2>Best Selling books</h2>
+                            <input style="width: 25rem;" type="text" class="form-control mx-2" placeholder="🔍Search books..." name="title"
+                            [(ngModel)]="title" (ngModelChange)="readValues()">
                         </div>
-                        <div class="col col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3" *ngFor="let i of books">
-                            <div class="card">
-                                <img height="380px" src="{{i.image}}"
-                                    class="card-img-top" alt="...">
-                                <div style="height: 170px;" class="card-body">
-                                    <h5 class="card-title">{{i.title}}</h5>
-                                    <p class="card-text">{{i.description}}</p>
+                        <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12 mb-3 mt-5" *ngIf="searchData.length!=0">
+                            <h5>Search Result</h5>
+                            <div class="row g-3">
+                                <div class="col col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3" *ngFor="let i of searchData">
+                                    <div class="card">
+                                        <img height="380px" src="{{i.image}}"
+                                            class="card-img-top" alt="...">
+                                        <div style="height: 170px;" class="card-body">
+                                            <h5 class="card-title">{{i.title}}</h5>
+                                            <p class="card-text">{{i.description}}</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Released: {{i.releasedyear}}</li>
+                                            <li class="list-group-item">Price: Rs. {{i.price}}</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <a href="#" class="btn btn-primary">Buy now</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Released: {{i.releasedyear}}</li>
-                                    <li class="list-group-item">Price: Rs. {{i.price}}</li>
-                                </ul>
-                                <div class="card-body">
-                                    <a href="#" class="btn btn-primary">Buy now</a>
+                            </div>
+                            
+                        </div>
+                        <div class="col-12 col-sm-12 div-md-12 col-lg-12 div-xl-12 div-xxl-12 mb-3 mt-5">
+                            <h5 *ngIf="searchData.length!=0" class="mt-5">All Products</h5>
+                            <div class="row g-3">
+                                <div class="col col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3 col-xxl-3" *ngFor="let i of books">
+                                    <div class="card">
+                                        <img height="380px" src="{{i.image}}"
+                                            class="card-img-top" alt="...">
+                                        <div style="height: 170px;" class="card-body">
+                                            <h5 class="card-title">{{i.title}}</h5>
+                                            <p class="card-text">{{i.description}}</p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Released: {{i.releasedyear}}</li>
+                                            <li class="list-group-item">Price: Rs. {{i.price}}</li>
+                                        </ul>
+                                        <div class="card-body">
+                                            <button class="btn btn-primary" (click)="issueBook(i.id,i.title,i.price,i.image)">Buy now</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

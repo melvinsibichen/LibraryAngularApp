@@ -7,22 +7,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent {
+  constructor(private route:Router){
+    localStorage.removeItem('userId')
+    localStorage.removeItem('email')
+    localStorage.removeItem('name')
+  }
   username=""
   password=""
 
-  constructor(private route:Router){}
-
   readValues = ()=>{
-    let values:any = {
-      "username":this.username,
-      "password":this.password
+    let data:any = {
+      "username": this.username,
+      "password": this.password
     }
-    console.log(values)
-
-    if (this.username=="melvin" && this.password=="12345") {
-      this.route.navigate(["/view"])
-    } else {
-      alert("Invalid Login Credentials")
+    if(this.username=='admin'&&this.password=='12345'){
+      console.log(data)
+      this.route.navigate(["/adminview"])
+    }else{
+      alert("username or password incorrect!!")
     }
   }
 }

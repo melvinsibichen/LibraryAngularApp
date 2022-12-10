@@ -15,6 +15,11 @@ import { BookSearchComponent } from './book-search/book-search.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
+//import { UserIssuesComponent } from './user-issues/user-issues.component';
+//import { AdminIssuesComponent } from './admin-issues/admin-issues.component';
 
 const myRoute:Routes = [
   {
@@ -37,6 +42,11 @@ const myRoute:Routes = [
     path:"view",
     component:BookViewComponent
   },
+  
+  {
+    path:"adminview",
+    component:AdminViewComponent
+  },
   {
     path:"edit",
     component:BookEditComponent
@@ -52,7 +62,15 @@ const myRoute:Routes = [
   {
     path:"search",
     component:BookSearchComponent
-  },
+  }
+  // {
+  //   path:"userissues",
+  //   component:UserIssuesComponent
+  // },
+  // {
+  //   path:"adminissues",
+  //   component:AdminIssuesComponent
+  // },
 ]
 
 @NgModule({
@@ -67,13 +85,18 @@ const myRoute:Routes = [
     BookDeleteComponent,
     IssueBookComponent,
     BookSearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    AdminNavbarComponent,
+    AdminViewComponent,
+    // UserIssuesComponent,
+    // AdminIssuesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(myRoute),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
